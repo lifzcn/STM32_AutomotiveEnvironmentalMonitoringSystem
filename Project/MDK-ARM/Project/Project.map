@@ -2344,28 +2344,28 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08003be0   Section        0  bmp280.o(.text.bmp280_read_fixed)
     [Anonymous Symbol]                       0x08003e68   Section        0  bmp280.o(.text.bmp280_read_float)
     [Anonymous Symbol]                       0x08003ec4   Section        0  main.o(.text.main)
-    read_hum_calibration_data                0x0800435d   Thumb Code   254  bmp280.o(.text.read_hum_calibration_data)
-    [Anonymous Symbol]                       0x0800435c   Section        0  bmp280.o(.text.read_hum_calibration_data)
-    read_register16                          0x0800445d   Thumb Code    64  bmp280.o(.text.read_register16)
-    [Anonymous Symbol]                       0x0800445c   Section        0  bmp280.o(.text.read_register16)
-    i.__0sprintf                             0x0800449c   Section        0  printfa.o(i.__0sprintf)
-    i.__scatterload_copy                     0x080044c4   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x080044d2   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x080044d4   Section       14  handlers.o(i.__scatterload_zeroinit)
-    _fp_digits                               0x080044e5   Thumb Code   366  printfa.o(i._fp_digits)
-    i._fp_digits                             0x080044e4   Section        0  printfa.o(i._fp_digits)
-    _printf_core                             0x08004669   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_core                           0x08004668   Section        0  printfa.o(i._printf_core)
-    _printf_post_padding                     0x08004d45   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_post_padding                   0x08004d44   Section        0  printfa.o(i._printf_post_padding)
-    _printf_pre_padding                      0x08004d69   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._printf_pre_padding                    0x08004d68   Section        0  printfa.o(i._printf_pre_padding)
-    _sputc                                   0x08004d97   Thumb Code    10  printfa.o(i._sputc)
-    i._sputc                                 0x08004d96   Section        0  printfa.o(i._sputc)
-    .L__const.HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x08004da0   Data           2  stm32f1xx_hal_rcc.o(.rodata..L__const.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    .L__const.HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x080077a0   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    .L.str.6                                 0x080077b0   Data          39  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080077b0   Section        0  main.o(.rodata.str1.1)
+    read_hum_calibration_data                0x08004349   Thumb Code   254  bmp280.o(.text.read_hum_calibration_data)
+    [Anonymous Symbol]                       0x08004348   Section        0  bmp280.o(.text.read_hum_calibration_data)
+    read_register16                          0x08004449   Thumb Code    64  bmp280.o(.text.read_register16)
+    [Anonymous Symbol]                       0x08004448   Section        0  bmp280.o(.text.read_register16)
+    i.__0sprintf                             0x08004488   Section        0  printfa.o(i.__0sprintf)
+    i.__scatterload_copy                     0x080044b0   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080044be   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080044c0   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _fp_digits                               0x080044d1   Thumb Code   366  printfa.o(i._fp_digits)
+    i._fp_digits                             0x080044d0   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x08004655   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_core                           0x08004654   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x08004d31   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x08004d30   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x08004d55   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x08004d54   Section        0  printfa.o(i._printf_pre_padding)
+    _sputc                                   0x08004d83   Thumb Code    10  printfa.o(i._sputc)
+    i._sputc                                 0x08004d82   Section        0  printfa.o(i._sputc)
+    .L__const.HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x08004d8c   Data           2  stm32f1xx_hal_rcc.o(.rodata..L__const.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    .L__const.HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x0800778c   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    .L.str.6                                 0x0800779c   Data          39  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800779c   Section        0  main.o(.rodata.str1.1)
     .L_MergedGlobals                         0x20000000   Data           8  stm32f1xx_hal.o(.data..L_MergedGlobals)
     [Anonymous Symbol]                       0x20000000   Section        0  stm32f1xx_hal.o(.data..L_MergedGlobals)
     .L_MergedGlobals                         0x20000028   Data          68  main.o(.bss..L_MergedGlobals)
@@ -2571,22 +2571,22 @@ Image Symbol Table
     bmp280_init_default_params               0x08003bd1   Thumb Code    14  bmp280.o(.text.bmp280_init_default_params)
     bmp280_read_fixed                        0x08003be1   Thumb Code   648  bmp280.o(.text.bmp280_read_fixed)
     bmp280_read_float                        0x08003e69   Thumb Code    90  bmp280.o(.text.bmp280_read_float)
-    main                                     0x08003ec5   Thumb Code  1032  main.o(.text.main)
-    __0sprintf                               0x0800449d   Thumb Code    34  printfa.o(i.__0sprintf)
-    __1sprintf                               0x0800449d   Thumb Code     0  printfa.o(i.__0sprintf)
-    __2sprintf                               0x0800449d   Thumb Code     0  printfa.o(i.__0sprintf)
-    __c89sprintf                             0x0800449d   Thumb Code     0  printfa.o(i.__0sprintf)
-    sprintf                                  0x0800449d   Thumb Code     0  printfa.o(i.__0sprintf)
-    __scatterload_copy                       0x080044c5   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x080044d3   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x080044d5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    AHBPrescTable                            0x08004da2   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08004db2   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
-    F6x8                                     0x08004dba   Data         552  oled.o(.rodata.F6x8)
-    F8X16                                    0x08004fe2   Data        1504  oled.o(.rodata.F8X16)
-    Hzk                                      0x080055c2   Data        8670  oled.o(.rodata.Hzk)
-    Region$$Table$$Base                      0x080077d8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080077f8   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08003ec5   Thumb Code  1012  main.o(.text.main)
+    __0sprintf                               0x08004489   Thumb Code    34  printfa.o(i.__0sprintf)
+    __1sprintf                               0x08004489   Thumb Code     0  printfa.o(i.__0sprintf)
+    __2sprintf                               0x08004489   Thumb Code     0  printfa.o(i.__0sprintf)
+    __c89sprintf                             0x08004489   Thumb Code     0  printfa.o(i.__0sprintf)
+    sprintf                                  0x08004489   Thumb Code     0  printfa.o(i.__0sprintf)
+    __scatterload_copy                       0x080044b1   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080044bf   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080044c1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    AHBPrescTable                            0x08004d8e   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08004d9e   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
+    F6x8                                     0x08004da6   Data         552  oled.o(.rodata.F6x8)
+    F8X16                                    0x08004fce   Data        1504  oled.o(.rodata.F8X16)
+    Hzk                                      0x080055ae   Data        8670  oled.o(.rodata.Hzk)
+    Region$$Table$$Base                      0x080077c4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080077e4   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32f1xx_hal.o(.data..L_MergedGlobals)
     uwTickPrio                               0x20000004   Data           4  stm32f1xx_hal.o(.data..L_MergedGlobals)
     CMD_Data                                 0x20000008   Data          27  oled.o(.data.CMD_Data)
@@ -2612,9 +2612,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007820, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007810, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000077f8, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000077e4, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2762,40 +2762,40 @@ Memory Map of the image
     0x08003be0   0x08003be0   0x00000288   Code   RO           21    .text.bmp280_read_fixed  bmp280.o
     0x08003e68   0x08003e68   0x0000005a   Code   RO           23    .text.bmp280_read_float  bmp280.o
     0x08003ec2   0x08003ec2   0x00000002   PAD
-    0x08003ec4   0x08003ec4   0x00000498   Code   RO          103    .text.main          main.o
-    0x0800435c   0x0800435c   0x000000fe   Code   RO           15    .text.read_hum_calibration_data  bmp280.o
-    0x0800445a   0x0800445a   0x00000002   PAD
-    0x0800445c   0x0800445c   0x00000040   Code   RO           25    .text.read_register16  bmp280.o
-    0x0800449c   0x0800449c   0x00000028   Code   RO         1384    i.__0sprintf        mc_w.l(printfa.o)
-    0x080044c4   0x080044c4   0x0000000e   Code   RO         1485    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080044d2   0x080044d2   0x00000002   Code   RO         1486    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080044d4   0x080044d4   0x0000000e   Code   RO         1487    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x080044e2   0x080044e2   0x00000002   PAD
-    0x080044e4   0x080044e4   0x00000184   Code   RO         1389    i._fp_digits        mc_w.l(printfa.o)
-    0x08004668   0x08004668   0x000006dc   Code   RO         1390    i._printf_core      mc_w.l(printfa.o)
-    0x08004d44   0x08004d44   0x00000024   Code   RO         1391    i._printf_post_padding  mc_w.l(printfa.o)
-    0x08004d68   0x08004d68   0x0000002e   Code   RO         1392    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x08004d96   0x08004d96   0x0000000a   Code   RO         1394    i._sputc            mc_w.l(printfa.o)
-    0x08004da0   0x08004da0   0x00000002   Data   RO          450    .rodata..L__const.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
-    0x08004da2   0x08004da2   0x00000010   Data   RO         1135    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x08004db2   0x08004db2   0x00000008   Data   RO         1136    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x08004dba   0x08004dba   0x00000228   Data   RO           91    .rodata.F6x8        oled.o
-    0x08004fe2   0x08004fe2   0x000005e0   Data   RO           92    .rodata.F8X16       oled.o
-    0x080055c2   0x080055c2   0x000021de   Data   RO           93    .rodata.Hzk         oled.o
-    0x080077a0   0x080077a0   0x00000010   Data   RO          449    .rodata.cst16       stm32f1xx_hal_rcc.o
-    0x080077b0   0x080077b0   0x00000027   Data   RO          110    .rodata.str1.1      main.o
-    0x080077d7   0x080077d7   0x00000001   PAD
-    0x080077d8   0x080077d8   0x00000020   Data   RO         1484    Region$$Table       anon$$obj.o
+    0x08003ec4   0x08003ec4   0x00000484   Code   RO          103    .text.main          main.o
+    0x08004348   0x08004348   0x000000fe   Code   RO           15    .text.read_hum_calibration_data  bmp280.o
+    0x08004446   0x08004446   0x00000002   PAD
+    0x08004448   0x08004448   0x00000040   Code   RO           25    .text.read_register16  bmp280.o
+    0x08004488   0x08004488   0x00000028   Code   RO         1384    i.__0sprintf        mc_w.l(printfa.o)
+    0x080044b0   0x080044b0   0x0000000e   Code   RO         1485    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080044be   0x080044be   0x00000002   Code   RO         1486    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080044c0   0x080044c0   0x0000000e   Code   RO         1487    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080044ce   0x080044ce   0x00000002   PAD
+    0x080044d0   0x080044d0   0x00000184   Code   RO         1389    i._fp_digits        mc_w.l(printfa.o)
+    0x08004654   0x08004654   0x000006dc   Code   RO         1390    i._printf_core      mc_w.l(printfa.o)
+    0x08004d30   0x08004d30   0x00000024   Code   RO         1391    i._printf_post_padding  mc_w.l(printfa.o)
+    0x08004d54   0x08004d54   0x0000002e   Code   RO         1392    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x08004d82   0x08004d82   0x0000000a   Code   RO         1394    i._sputc            mc_w.l(printfa.o)
+    0x08004d8c   0x08004d8c   0x00000002   Data   RO          450    .rodata..L__const.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
+    0x08004d8e   0x08004d8e   0x00000010   Data   RO         1135    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x08004d9e   0x08004d9e   0x00000008   Data   RO         1136    .rodata.APBPrescTable  system_stm32f1xx.o
+    0x08004da6   0x08004da6   0x00000228   Data   RO           91    .rodata.F6x8        oled.o
+    0x08004fce   0x08004fce   0x000005e0   Data   RO           92    .rodata.F8X16       oled.o
+    0x080055ae   0x080055ae   0x000021de   Data   RO           93    .rodata.Hzk         oled.o
+    0x0800778c   0x0800778c   0x00000010   Data   RO          449    .rodata.cst16       stm32f1xx_hal_rcc.o
+    0x0800779c   0x0800779c   0x00000027   Data   RO          110    .rodata.str1.1      main.o
+    0x080077c3   0x080077c3   0x00000001   PAD
+    0x080077c4   0x080077c4   0x00000020   Data   RO         1484    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080077f8, Size: 0x000006a8, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080077e8, Size: 0x000006a8, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080077f8   0x00000008   Data   RW          412    .data..L_MergedGlobals  stm32f1xx_hal.o
-    0x20000008   0x08007800   0x0000001b   Data   RW           94    .data.CMD_Data      oled.o
-    0x20000023   0x0800781b   0x00000001   PAD
-    0x20000024   0x0800781c   0x00000004   Data   RW         1134    .data.SystemCoreClock  system_stm32f1xx.o
+    0x20000000   0x080077e8   0x00000008   Data   RW          412    .data..L_MergedGlobals  stm32f1xx_hal.o
+    0x20000008   0x080077f0   0x0000001b   Data   RW           94    .data.CMD_Data      oled.o
+    0x20000023   0x0800780b   0x00000001   PAD
+    0x20000024   0x0800780c   0x00000004   Data   RW         1134    .data.SystemCoreClock  system_stm32f1xx.o
     0x20000028        -       0x00000044   Zero   RW          112    .bss..L_MergedGlobals  main.o
     0x2000006c        -       0x00000100   Zero   RW          109    .bss.dataValue      main.o
     0x2000016c        -       0x00000054   Zero   RW          138    .bss.hi2c1          i2c.o
@@ -2803,7 +2803,7 @@ Memory Map of the image
     0x20000214        -       0x00000048   Zero   RW          156    .bss.htim1          tim.o
     0x2000025c        -       0x00000044   Zero   RW          171    .bss.huart1         usart.o
     0x200002a0        -       0x00000004   Zero   RW          411    .bss.uwTick         stm32f1xx_hal.o
-    0x200002a4   0x08007820   0x00000004   PAD
+    0x200002a4   0x08007810   0x00000004   PAD
     0x200002a8        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
 
@@ -2818,7 +2818,7 @@ Image component sizes
        938          0          0          0          0       4406   ds18b20.o
        166          0          0          0          0       1620   gpio.o
        324          0          0          0        168       4693   i2c.o
-      1186        144         39          0        324       7013   main.o
+      1166        144         39          0        324       7011   main.o
       2364          0      10726         27          0       9899   oled.o
         36          8        236          0       1024        828   startup_stm32f103xb.o
        188          0          0          8          4       5782   stm32f1xx_hal.o
@@ -2836,7 +2836,7 @@ Image component sizes
        182          0          0          0         68       4247   usart.o
 
     ----------------------------------------------------------------------
-     15336        174      11076         40       1664     232707   Object Totals
+     15316        174      11076         40       1664     232705   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         90          0          1          1          4          0   (incl. Padding)
 
@@ -2899,15 +2899,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     19636        276      11076         40       1664     233671   Grand Totals
-     19636        276      11076         40       1664     233671   ELF Image Totals
-     19636        276      11076         40          0          0   ROM Totals
+     19616        276      11076         40       1664     233669   Grand Totals
+     19616        276      11076         40       1664     233669   ELF Image Totals
+     19616        276      11076         40          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                30712 (  29.99kB)
+    Total RO  Size (Code + RO Data)                30692 (  29.97kB)
     Total RW  Size (RW Data + ZI Data)              1704 (   1.66kB)
-    Total ROM Size (Code + RO Data + RW Data)      30752 (  30.03kB)
+    Total ROM Size (Code + RO Data + RW Data)      30732 (  30.01kB)
 
 ==============================================================================
 
