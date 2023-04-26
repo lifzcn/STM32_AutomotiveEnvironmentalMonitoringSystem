@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -26,9 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-#include "oled.h"
-#include "ds18b20.h"
 #include "bmp280.h"
+#include "sgp30.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -73,12 +72,9 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	uint8_t x = 0;
-	uint8_t y = 0;
-	float temperatureValue = 0;
-	float pressureValue = 0;
-	char temperatureFormatValue[5];
-	char pressureFormatValue[7];
+  float temperatureValue = 0;
+  float pressureValue = 0;
+	uint8_t formaldehydeValue = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -104,78 +100,52 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-	OLED_Init();
-	OLED_Clear();
-	OLED_ShowChinese(x + 16 * 1, y, 0);
-	OLED_ShowChinese(x + 16 * 2, y, 1);
-	OLED_ShowChinese(x + 16 * 3, y, 2);
-	OLED_ShowChinese(x + 16 * 4, y, 3);
-	OLED_ShowChinese(x + 16 * 5, y, 4);
-	OLED_ShowChinese(x + 16 * 6, y, 5);
-	OLED_ShowChinese(x + 16 * 0, y + 2 * 1, 6);
-	OLED_ShowChinese(x + 16 * 1, y + 2 * 1, 7);
-	OLED_ShowChinese(x + 16 * 2, y + 2 * 1, 8);
-	OLED_ShowChinese(x + 16 * 3, y + 2 * 1, 9);
-	OLED_ShowChar(x + 16 * 4 + 8 * 0, y + 2 * 1, ':', 16);
-	OLED_ShowChinese(x + 16 * 0, y + 2 * 2, 10);
-	OLED_ShowChinese(x + 16 * 1, y + 2 * 2, 11);
-	OLED_ShowChinese(x + 16 * 2, y + 2 * 2, 12);
-	OLED_ShowChinese(x + 16 * 3, y + 2 * 2, 13);
-	OLED_ShowChar(x + 16 * 4 + 8 * 0, y + 2 * 2, ':', 16);
-	OLED_ShowChinese(x + 16 * 0, y + 2 * 3, 14);
-	OLED_ShowChinese(x + 16 * 1, y + 2 * 3, 15);
-	OLED_ShowChinese(x + 16 * 2, y + 2 * 3, 15);
-	OLED_ShowChinese(x + 16 * 3, y + 2 * 3, 16);
-	OLED_ShowChar(x + 16 * 4 + 8 * 0, y + 2 * 3, ':', 16);
+  bmp280_init_default_params(&bmp280.params);
+  bmp280.addr = BMP280_I2C_ADDRESS_0;
+  bmp280.i2c = &hi2c1;
+  while (!bmp280_init(&bmp280, &bmp280.params))
+  {
+    sizeValue = sprintf((char *)dataValue, "BMP280 initialization failed\n");
+    HAL_Delay(2000);
+  }
+  bool bme280p = bmp280.id == BME280_CHIP_ID;
+  sizeValue = sprintf((char *)dataValue, "BMP280: found %s\n", bme280p ? "BME280" : "BMP280");
 	
-	bmp280_init_default_params(&bmp280.params);
-	bmp280.addr = BMP280_I2C_ADDRESS_0;
-	bmp280.i2c = &hi2c1;
-	while (!bmp280_init(&bmp280, &bmp280.params)) {
-		sizeValue = sprintf((char *)dataValue, "BMP280 initialization failed\n");
-		HAL_UART_Transmit(&huart1, dataValue, sizeValue, 1000);
-		HAL_Delay(2000);
-	}
-	bool bme280p = bmp280.id == BME280_CHIP_ID;
-	sizeValue = sprintf((char *)dataValue, "BMP280: found %s\n", bme280p?"BME280":"BMP280");
+	SGP30_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		temperatureValue = DS18B20_GetTemperture();
-		sprintf(temperatureFormatValue, "%.02f", temperatureValue);
+    while (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity))
+    {
+      sizeValue = sprintf((char *)dataValue, "Temperature/pressure reading failed!\n");
+      HAL_Delay(2000);
+    }
+    sizeValue = sprintf((char *)dataValue, "Pressure: %.2f Pa, Temperature: %.2f C", pressure, temperature);
+    if (bme280p)
+    {
+      sizeValue = sprintf((char *)dataValue, ", Humidity: %.2f\n", humidity);
+      HAL_UART_Transmit(&huart1, dataValue, sizeValue, 1000);
+    }
+    else
+    {
+      sizeValue = sprintf((char *)dataValue, "\n");
+    }
+
+    temperatureValue = temperature;
+    pressureValue = pressure;
 		
-		OLED_ShowNum(x + 16 * 4 + 8 * 1, y + 2 * 1, temperatureValue, 5, 16);
-		OLED_ShowChar(x + 16 * 4 + 8 * 6, y + 2 * 1, 'C', 16);
-		
-		while(!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity))
-		{
-			sizeValue = sprintf((char *)dataValue, "Temperature/pressure reading failed!\n");
-			HAL_UART_Transmit(&huart1, dataValue, sizeValue, 1000);
-			HAL_Delay(2000);
-		}
-		sizeValue = sprintf((char *)dataValue,"Pressure: %.2f Pa, Temperature: %.2f C", pressure, temperature);
-		HAL_UART_Transmit(&huart1, dataValue, sizeValue, 1000);
-		if(bme280p)
-		{
-			sizeValue = sprintf((char *)dataValue,", Humidity: %.2f\n", humidity);
-			HAL_UART_Transmit(&huart1, dataValue, sizeValue, 1000);
-		}
-		else
-		{
-			sizeValue = sprintf((char *)dataValue, "\n");
-			HAL_UART_Transmit(&huart1, dataValue, sizeValue, 1000);
-		}
-		pressureValue = pressure;
-		sprintf(pressureFormatValue, "%.03f", pressureValue/1000);
-		
-		OLED_ShowNum(x + 16 * 4 + 8 * 1, y + 2 * 2, pressureValue, 7, 16);
-		OLED_ShowChar(x + 16 * 4 + 8 * 8, y + 2 * 2, 'k', 16);
-		OLED_ShowChar(x + 16 * 4 + 8 * 9, y + 2 * 2, 'P', 16);
-		OLED_ShowChar(x + 16 * 4 + 8 * 10, y + 2 * 2, 'a', 16);
-		
+		formaldehydeValue = SGP30_GetCO2andVOC();
+
+    printf("*-----*-----*-----*-----*-----*\n");
+    printf("Current Temperature: %.2f C\n", temperatureValue);
+    printf("Current Pressure: %.3f kPa\n", pressureValue / 1000);
+		printf("Current Formaldehyde: %d %%\n", formaldehydeValue);
+    printf("*-----*-----*-----*-----*-----*\n");
+
+    HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

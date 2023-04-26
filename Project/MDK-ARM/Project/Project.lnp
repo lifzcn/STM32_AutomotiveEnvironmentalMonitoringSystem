@@ -1,8 +1,7 @@
 --cpu Cortex-M3
 "project\startup_stm32f103xb.o"
 "project\bmp280.o"
-"project\ds18b20.o"
-"project\oled.o"
+"project\sgp30.o"
 "project\main.o"
 "project\gpio.o"
 "project\i2c.o"

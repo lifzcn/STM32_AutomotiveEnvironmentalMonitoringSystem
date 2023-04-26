@@ -57,8 +57,16 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define DS18B20_Pin GPIO_PIN_0
-#define DS18B20_GPIO_Port GPIOB
+#define Key_GND_Pin GPIO_PIN_12
+#define Key_GND_GPIO_Port GPIOB
+#define Key_4_Pin GPIO_PIN_13
+#define Key_4_GPIO_Port GPIOB
+#define Key_3_Pin GPIO_PIN_14
+#define Key_3_GPIO_Port GPIOB
+#define Key_2_Pin GPIO_PIN_15
+#define Key_2_GPIO_Port GPIOB
+#define Key_1_Pin GPIO_PIN_8
+#define Key_1_GPIO_Port GPIOA
 #define LED_IO_Pin GPIO_PIN_8
 #define LED_IO_GPIO_Port GPIOB
 #define LED_GND_Pin GPIO_PIN_9
