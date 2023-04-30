@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define HCSR505_IO_Pin GPIO_PIN_1
+#define HCSR505_IO_GPIO_Port GPIOB
 #define Key_GND_Pin GPIO_PIN_12
 #define Key_GND_GPIO_Port GPIOB
 #define Key_4_Pin GPIO_PIN_13
